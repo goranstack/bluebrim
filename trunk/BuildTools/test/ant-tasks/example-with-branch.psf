@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+	<provider id="org.eclipse.team.cvs.core.cvsnature">
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/TestApplications/Debug,Debug"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/DistributionBase,DistributionBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/DistributionServer,DistributionServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,EclipseConfig,EclipseConfig"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,EclipseTools,EclipseTools"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/FileServer,FileServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/FileServerBase,FileServerBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/FileServerClient,FileServerClient"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/FormatWatch,FormatWatch"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/FormsBase,FormsBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/JdbcDrivers,JdbcDrivers"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/MailBase,MailBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/MailWatch,MailWatch"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/PPSchedBase,PPSchedBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/PPSchedServer,PPSchedServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/PPSchedWatch,PPSchedWatch"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServlets/PPSchedWeb,PPSchedWeb"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/PrepressBase,PrepressBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/PrepressServer,PrepressServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/PrintingBase,PrintingBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/PrintingServer,PrintingServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/PrintingWatch,PrintingWatch"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/RouteTemplateWatch,RouteTemplateWatch"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_projects/Sanoma/Sanoma_3.1/eclipse/Sanoma31DbConvert,Sanoma31DbConvert"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaBase,SanomaBase,Sanoma_Release_20050519"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaInterface,SanomaInterface,Sanoma_Release_20050519"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaServer,SanomaServer,Sanoma_Release_20050519"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaStatDb,SanomaStatDb,Sanoma_Release_20050519"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaWatch,SanomaWatch,Sanoma_Release_20050519"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/Server,Server"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/ServerDeployment,ServerDeployment"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/ServerTools,ServerTools"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/StatDb,StatDb"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/StatDbTitle,StatDbTitle"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/SystemBase,SystemBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/TitleBase,TitleBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/TitleServer,TitleServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/WatchBase,WatchBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/WatchStandard,WatchStandard"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaXLib,XLib"/>
+	</provider>
+</psf>

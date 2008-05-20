@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project name="BuildTools" default="jar">
+
+	<description>
+		Ant build file for the EclipseTools project
+	</description>
+
+	<import file="../${ant.project.name}/build_classpath.xml" />
+
+	<property name="src-dir" value="src" />
+	<property name="classes-dir" value="build/classes" />
+	<property name="jars-dir" value="build/jars" />
+	<property name="bluebrim.compile.target" value="1.4" />
+	<property name="bluebrim.compile.debug" value="on" />
+	<property name="bluebrim.compile.debuglevel" value="lines,source,vars" />
+	<property name="bluebrim.compile.optimize" value="off" />
+
+
+	<target name="init">
+		<tstamp />
+		<mkdir dir="${classes-dir}" />
+		<mkdir dir="${jars-dir}" />
+	</target>
+
+	<target name="clean" description="Deletes generated files for this project">
+		<echo>Cleaning ${ant.project.name}...</echo>
+		<delete dir="${classes-dir}" quiet="true" />
+		<delete dir="${jars-dir}" quiet="true" />
+	</target>
+
+	<target name="jar" depends="clean, init" description="Compiles and creates jar for MWM Ant tasks">
+		<echo>Compiling ${ant.project.name}...</echo>
+		<javac classpathref="classpath" srcdir="${src-dir}" compiler="modern" destdir="${classes-dir}" 
+			target="${bluebrim.compile.target}" debug="${bluebrim.compile.debug}" debuglevel="${bluebrim.compile.debuglevel}" 
+			optimize="${bluebrim.compile.optimize}" deprecation="off">
+		</javac>
+
+		<echo>Creating BlueBrimAntTasks.jar</echo>
+		<jar destfile="lib/BlueBrimAntTasks.jar" basedir="${classes-dir}" compress="true" includes="com/bluebrim/ant/** com/orangevolt/tools/ant/**" />
+		<jar destfile="lib/BlueBrimAntTasks.jar" basedir="resources" compress="true" update="true" />
+
+	</target>
+	
+	<path id="svnkit-classpath">
+		<pathelement location="external-jars/svnkit/ganymed.jar" />
+		<pathelement location="external-jars/svnkit/svnkit.jar" />
+		<pathelement location="external-jars/svnkit/svnkit-cli.jar" />
+	</path>
+
+	<!-- http://svnkit.com/kb/user-guide-ant.html -->
+	<!-- http://svnbook.red-bean.com/en/1.2/svn-book.html -->
+	<target name="svnCheckout">
+		<mkdir dir="test-checkout"/>
+		<java classname="org.tmatesoft.svn.cli.SVN" dir="test-checkout" fork="true">
+			<arg value="checkout" />
+			<!-- arg value="http://esox.googlecode.com/svn/branches/goran/esoxCore" /-->
+			<classpath refid="svnkit-classpath"/>
+		</java>
+	</target>
+	
+	<target name="svnRevision">
+		<java classname="org.tmatesoft.svn.cli.SVN" fork="true" output="temp.txt">
+			<arg value="info" />
+			<arg value="build.xml" />
+			<classpath refid="svnkit-classpath"/>
+		</java>
+		<replace summary="true" file="temp.txt" token=": " value="="/>
+		<property file="temp.txt" prefix="svn."/>
+		<delete file="temp.txt"/>
+		<echo>svn.Revision = ${svn.Revision}</echo>
+	</target>
+
+
+</project>
