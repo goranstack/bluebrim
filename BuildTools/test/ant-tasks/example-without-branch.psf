@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+	<provider id="org.eclipse.team.cvs.core.cvsnature">
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/DistributionBase,DistributionBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,EclipseConfig,EclipseConfig"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/FileServer,FileServer"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/FileServerBase,FileServerBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/FileServerClient,FileServerClient"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/FormsBase,FormsBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/PPSchedBase,PPSchedBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServlets/PPSchedWeb,PPSchedWeb"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/PrepressBase,PrepressBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/PrintingBase,PrintingBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/PrintingWatch,PrintingWatch"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaBase,SanomaBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaWebClient,SanomaWebClient"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServer/Server,Server"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/SystemBase,SystemBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMBase/TitleBase,TitleBase"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/WatchStandard,WatchStandard"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServlets/WebClient,WebClient"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServlets/WebClientApp,WebClientApp"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/Sanoma/SanomaXLib,XLib"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMServlets/Tomcat55,Tomcat55"/>
+		<project reference="1.0,:pserver:leif:/home/cvs,mwm_System31/eclipse/MWMWatch/WatchBase,WatchBase"/>
+	</provider>
+</psf>

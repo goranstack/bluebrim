@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<project name="Tests the CvsCheckoutAntFile-task" default="test">
+
+	<taskdef name="psf2ant" classname="se.mwm.ant.tasks.Psf2Ant" classpath="../../classes-eclipse" />
+
+	<target name="test">
+		<mkdir dir="out" />
+		<psf2ant psffile="example-without-branch.psf" destfile="out/example-without-branch.xml" />
+		<psf2ant psffile="example-with-branch.psf" destfile="out/example-with-branch.xml" />		
+	</target>
+
+</project>
