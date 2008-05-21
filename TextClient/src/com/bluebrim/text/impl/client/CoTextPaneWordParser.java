@@ -1,15 +1,15 @@
 package com.bluebrim.text.impl.client;
 
-import java.util.*;
+import java.util.NoSuchElementException;
 
-import javax.swing.*;
-
-import com.wintertree.ssce.*;
-import com.wintertree.util.*;
+import javax.swing.JTextPane;
 
 //
 
-public class CoTextPaneWordParser implements WordParser
+//public class CoTextPaneWordParser implements WordParser
+// WordParser is part of Wintertree spell checker that will be replaced by a GPL spell checker
+public class CoTextPaneWordParser
+
 {
 	// The current cursor position
 	int cursor;
@@ -498,5 +498,26 @@ public class CoTextPaneWordParser implements WordParser
 	public void updateText() {
 		text = textArea.getText();
 		cursor = 0;
+	}
+	
+	/**
+	 * Fake class to get rid of compile errors
+	 *
+	 */
+	private static class UniCharacter
+	{
+
+		public static boolean isApostrophe(char charAt) {
+			throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
+		}
+
+		public static boolean isPrintable(char c) {
+			throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
+		}
+
+		public static boolean isPunctuation(char termChar) {
+			throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
+		}
+		
 	}
 }

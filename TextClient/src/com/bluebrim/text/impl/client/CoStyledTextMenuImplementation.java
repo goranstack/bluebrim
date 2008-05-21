@@ -1,24 +1,43 @@
 package com.bluebrim.text.impl.client;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.rmi.*;
-import java.util.*;
+import java.awt.Dimension;
+import java.awt.Event;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.MissingResourceException;
 
-import javax.swing.*;
-import javax.swing.text.*;
+import javax.swing.Action;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFileChooser;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import javax.swing.text.AttributeSet;
 
-import com.bluebrim.font.shared.*;
-import com.bluebrim.menus.client.*;
-import com.bluebrim.paint.impl.client.*;
-import com.bluebrim.paint.shared.*;
-import com.bluebrim.spellchecker.client.*;
-import com.bluebrim.spellchecker.shared.*;
-import com.bluebrim.swing.client.*;
-import com.bluebrim.text.impl.client.actions.*;
-import com.bluebrim.text.impl.shared.*;
-import com.bluebrim.text.shared.*;
+import com.bluebrim.font.shared.CoFontAttribute;
+import com.bluebrim.menus.client.CoCheckboxMenuItem;
+import com.bluebrim.menus.client.CoMenuBuilder;
+import com.bluebrim.menus.client.CoMenuItem;
+import com.bluebrim.menus.client.CoSubMenu;
+import com.bluebrim.menus.client.CoTriStateCheckBoxMenuItem;
+import com.bluebrim.paint.impl.client.CoColorSampleIcon;
+import com.bluebrim.paint.shared.CoColorIF;
+import com.bluebrim.swing.client.CoButtonGroup;
+import com.bluebrim.swing.client.CoUndoHandler;
+import com.bluebrim.text.impl.client.actions.CoActionUtilities;
+import com.bluebrim.text.impl.shared.CoEnumValue;
+import com.bluebrim.text.impl.shared.CoStyleConstants;
+import com.bluebrim.text.shared.CoStyledDocument;
+import com.bluebrim.text.shared.CoStyledDocumentIF;
+import com.bluebrim.text.shared.CoTagChainIF;
+import com.bluebrim.text.shared.CoTextConstants;
+import com.bluebrim.text.shared.CoTextEditorContextIF;
 
 /*
  * Skapar en högerknappsmeny.
@@ -712,15 +731,17 @@ public String getResourceString(String nm)
 	return str;
 }
 
-protected CoSpellCheckPropertiesIF getSpellCheckProperties()
+protected Object getSpellCheckProperties()
 {
-	try
-    {
-        return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
-    } catch (RemoteException e)
-    {
-        throw new RuntimeException(e);
-    }
+//	try
+//    {
+//        return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
+//    } catch (RemoteException e)
+//    {
+//        throw new RuntimeException(e);
+//    }
+	throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
+
 }
 
 protected abstract void setAllEnabled( boolean b );

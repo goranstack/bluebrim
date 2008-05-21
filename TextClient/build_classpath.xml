@@ -25,8 +25,6 @@
     <pathelement location="../LengthUnitClient/build.xml" />
     <pathelement location="../PaintShared/build.xml" />
     <pathelement location="../PaintClient/build.xml" />
-    <pathelement location="../SpellCheckerShared/build.xml" />
-    <pathelement location="../SpellCheckerClient/build.xml" />
     <pathelement location="../TextShared/build.xml" />
   </path>
   
@@ -58,8 +56,6 @@
       <include name="PaintShared/${jars-dir}/PaintShared.jar" />
       <include name="RenderingShared/${jars-dir}/RenderingShared.jar" />
       <include name="ShapeShared/${jars-dir}/ShapeShared.jar" />
-      <include name="SpellCheckerClient/${jars-dir}/SpellCheckerClient.jar" />
-      <include name="SpellCheckerShared/${jars-dir}/SpellCheckerShared.jar" />
       <include name="TextShared/${jars-dir}/TextShared.jar" />
       <include name="XmlBase/${jars-dir}/XmlBase.jar" />
     </fileset>
