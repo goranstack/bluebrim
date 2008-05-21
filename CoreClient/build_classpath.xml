@@ -22,7 +22,6 @@
     <!-- External jars -->
     <fileset dir=".." id="external-jars">
       <include name="CoreClient/resources" />
-      <include name="CoreClient/xalan.jar" />
     </fileset>
     
     <!-- Merged jars -->
