@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="src" path="/XmlBase"/>
+	<classpathentry exported="true" kind="src" path="/TextShared"/>
+	<classpathentry kind="src" path="/ContentServer"/>
+	<classpathentry kind="src" path="/LayoutBase"/>
+	<classpathentry kind="src" path="/CompositeContentServer"/>
+	<classpathentry kind="lib" path="resources"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Crimson"/>
+	<classpathentry kind="output" path="classes-eclipse"/>
+</classpath>
