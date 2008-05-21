@@ -1,15 +1,15 @@
 package com.bluebrim.layout.impl.client.editor;
 
-import java.awt.event.*;
-import java.rmi.*;
-import java.util.*;
+import java.awt.event.MouseEvent;
+import java.util.Iterator;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
-import com.bluebrim.layout.impl.client.*;
-import com.bluebrim.layout.impl.shared.view.*;
-import com.bluebrim.spellchecker.client.*;
-import com.bluebrim.spellchecker.shared.*;
+import com.bluebrim.layout.impl.client.CoPageItemUIStringResources;
+import com.bluebrim.layout.impl.shared.view.CoPageItemAbstractTextContentView;
+import com.bluebrim.layout.impl.shared.view.CoPageItemContentView;
+import com.bluebrim.layout.impl.shared.view.CoPageItemView;
+import com.bluebrim.layout.impl.shared.view.CoPageItemViewVisitor;
 
 /**
  * Layout editor operation: Run spell checker.
@@ -103,15 +103,16 @@ private void doCheckSpelling( CoPageItemView v )
 
 	v.visit( visitor );
 }
-protected CoSpellCheckPropertiesIF getSpellCheckProperties()
+protected Object getSpellCheckProperties()
 {
-	try
-    {
-        return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
-    } catch (RemoteException e)
-    {
-        throw new RuntimeException(e);
-    }
+//	try
+//    {
+//        return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
+//    } catch (RemoteException e)
+//    {
+//        throw new RuntimeException(e);
+//    }
+	throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
 
 }
 }

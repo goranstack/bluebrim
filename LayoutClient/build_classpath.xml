@@ -34,8 +34,6 @@
     <pathelement location="../FontClient/build.xml" />
     <pathelement location="../LengthUnitClient/build.xml" />
     <pathelement location="../PaintClient/build.xml" />
-    <pathelement location="../SpellCheckerShared/build.xml" />
-    <pathelement location="../SpellCheckerClient/build.xml" />
     <pathelement location="../TextClient/build.xml" />
     <pathelement location="../Viewable/build.xml" />
     <pathelement location="../ImageClient/build.xml" />
@@ -91,8 +89,6 @@
       <include name="PostScript/${jars-dir}/PostScript.jar" />
       <include name="RenderingShared/${jars-dir}/RenderingShared.jar" />
       <include name="ShapeShared/${jars-dir}/ShapeShared.jar" />
-      <include name="SpellCheckerClient/${jars-dir}/SpellCheckerClient.jar" />
-      <include name="SpellCheckerShared/${jars-dir}/SpellCheckerShared.jar" />
       <include name="StrokeClient/${jars-dir}/StrokeClient.jar" />
       <include name="StrokeShared/${jars-dir}/StrokeShared.jar" />
       <include name="TextClient/${jars-dir}/TextClient.jar" />
