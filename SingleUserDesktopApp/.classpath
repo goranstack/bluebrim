@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src-test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/CoreClient"/>
+	<classpathentry kind="src" path="/ContentServer"/>
+	<classpathentry kind="src" path="/ContentClient"/>
+	<classpathentry kind="src" path="/CoreServer"/>
+	<classpathentry kind="src" path="/FontServer"/>
+	<classpathentry kind="src" path="/FontClient"/>
+	<classpathentry kind="src" path="/FormulaServer"/>
+	<classpathentry kind="src" path="/FormulaShared"/>
+	<classpathentry kind="src" path="/ImageClient"/>
+	<classpathentry kind="src" path="/ImageServer"/>
+	<classpathentry kind="src" path="/LayoutClient"/>
+	<classpathentry kind="src" path="/LayoutServer"/>
+	<classpathentry kind="src" path="/PageServer"/>
+	<classpathentry kind="src" path="/PageClient"/>
+	<classpathentry kind="src" path="/PaintClient"/>
+	<classpathentry kind="src" path="/PaintServer"/>
+	<classpathentry kind="src" path="/PostScriptClient"/>
+	<classpathentry kind="src" path="/PostScriptServer"/>
+	<classpathentry kind="src" path="/TextClient"/>
+	<classpathentry kind="src" path="/TextServer"/>
+	<classpathentry kind="src" path="/XmlBase"/>
+	<classpathentry kind="src" path="/PageSizeShared"/>
+	<classpathentry kind="src" path="/StrokeShared"/>
+	<classpathentry kind="src" path="/XmlShared"/>
+	<classpathentry kind="src" path="/CompositeContentServer"/>
+	<classpathentry kind="src" path="/CompositeContentClient"/>
+	<classpathentry kind="src" path="/SpellCheckerServer"/>
+	<classpathentry kind="src" path="/SpellCheckerClient"/>
+	<classpathentry kind="lib" path="resources"/>
+	<classpathentry kind="src" path="/ShapeShared"/>
+	<classpathentry kind="src" path="/FormulaTextServer"/>
+	<classpathentry kind="src" path="/TextXml"/>
+	<classpathentry kind="src" path="/ImageXml"/>
+	<classpathentry kind="src" path="/LayoutXml"/>
+	<classpathentry kind="lib" path="external-jars/xplookandfeel.jar" sourcepath="external-jars/src/xplookandfeel.zip"/>
+	<classpathentry kind="src" path="/MemoryMonitor"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Crimson"/>
+	<classpathentry kind="lib" path="runtime/resources"/>
+	<classpathentry kind="output" path="classes-eclipse"/>
+</classpath>
