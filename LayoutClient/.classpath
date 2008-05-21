@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="src" path="/LayoutShared"/>
+	<classpathentry kind="src" path="/CoreClient"/>
+	<classpathentry kind="src" path="/ShapeShared"/>
+	<classpathentry kind="src" path="/XmlBase"/>
+	<classpathentry kind="src" path="/TextClient"/>
+	<classpathentry kind="src" path="/StrokeClient"/>
+	<classpathentry kind="src" path="/AbstractContentClient"/>
+	<classpathentry kind="src" path="/ImageShared"/>
+	<classpathentry kind="src" path="/PageSizeShared"/>
+	<classpathentry kind="src" path="/PageClient"/>
+	<classpathentry kind="src" path="/PostScript"/>
+	<classpathentry kind="src" path="/PaintClient"/>
+	<classpathentry kind="src" path="/ImageClient"/>
+	<classpathentry kind="src" path="/PageSizeClient"/>
+	<classpathentry kind="src" path="/LayoutManagerExJobb"/>
+	<classpathentry kind="src" path="/FormulaShared"/>
+	<classpathentry kind="src" path="/SpellCheckerClient"/>
+	<classpathentry kind="src" path="/LengthUnitClient"/>
+	<classpathentry kind="src" path="/Viewable"/>
+	<classpathentry kind="src" path="/CompositeContentShared"/>
+	<classpathentry kind="src" path="/AbstractCompositeContentClient"/>
+	<classpathentry kind="lib" path="resources"/>
+	<classpathentry kind="output" path="classes-eclipse"/>
+</classpath>
