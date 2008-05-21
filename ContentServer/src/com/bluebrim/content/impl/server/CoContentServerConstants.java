@@ -1,0 +1,8 @@
+package com.bluebrim.content.impl.server;
+
+/**
+ * @author Göran Stäck 2002-09-02
+ */
+public interface CoContentServerConstants {
+
+}
