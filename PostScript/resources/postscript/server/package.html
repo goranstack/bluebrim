@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+</HEAD>
+<BODY>
+Graphics Operation supported by Postscript generation, used by the two-pass Postscript generation system.
+Each class represent a drawing operation supported by the Paintable interface. These classes is used the following
+way:
+<ul>
+	<li>CoPostscriptPaintable instantiates (basically) one new drawingop object for each paint method call, and
+stores it in an array.</li>
+	<li>CoPostscriptGenerator iterates through this array and generates Postscript code in a two-phase
+generation.</li>
+</ul>
+
+The two-phase generation in CoPostscriptGenerator works as follows: First, for each object, the preparePostscript method is called. Then, for each object, the 
+generatePostscript method is called. For most drawing operations, the preparePostscript method sets up the 
+CoPostscriptHolder with information that is needed before actual Postscript drawing operations can be made,
+such as font/resource list, Postscript procedure definitions, and similar. The generatePostscript phase 
+generates actual Postscript code which, when executed at the printer, will draw a figure corresponding to the
+CoPaintable method call that resulted in the drawingop object.
+
+<h2>Server/client info</h2>
+These packages is available both on the server and the client. <p>
+
+Suggested future package name:<br>
+com.bluebrim.calvin.postscript.common.drawingops
+
+</BODY>
+</HTML>
