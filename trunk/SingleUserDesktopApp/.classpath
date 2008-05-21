@@ -29,8 +29,6 @@
 	<classpathentry kind="src" path="/XmlShared"/>
 	<classpathentry kind="src" path="/CompositeContentServer"/>
 	<classpathentry kind="src" path="/CompositeContentClient"/>
-	<classpathentry kind="src" path="/SpellCheckerServer"/>
-	<classpathentry kind="src" path="/SpellCheckerClient"/>
 	<classpathentry kind="lib" path="resources"/>
 	<classpathentry kind="src" path="/ShapeShared"/>
 	<classpathentry kind="src" path="/FormulaTextServer"/>

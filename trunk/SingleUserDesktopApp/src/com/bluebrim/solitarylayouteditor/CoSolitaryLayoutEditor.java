@@ -1,44 +1,76 @@
 package com.bluebrim.solitarylayouteditor;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.zip.*;
+import java.util.Locale;
+import java.util.zip.ZipException;
+import java.util.zip.ZipFile;
 
-import javax.imageio.spi.*;
-import javax.swing.*;
+import javax.imageio.spi.IIORegistry;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileFilter;
 
-import org.apache.batik.util.gui.*;
+import org.apache.batik.util.gui.MemoryMonitor;
 
-import com.bluebrim.base.shared.*;
-import com.bluebrim.compositecontent.client.*;
-import com.bluebrim.content.impl.server.*;
-import com.bluebrim.font.client.*;
-import com.bluebrim.font.impl.client.*;
-import com.bluebrim.font.impl.server.*;
-import com.bluebrim.font.shared.*;
-import com.bluebrim.gui.client.*;
-import com.bluebrim.image.client.*;
-import com.bluebrim.image.impl.server.*;
-import com.bluebrim.image.impl.shared.*;
-import com.bluebrim.layout.client.*;
-import com.bluebrim.layout.impl.client.editor.*;
-import com.bluebrim.layout.impl.server.*;
-import com.bluebrim.layout.impl.shared.*;
-import com.bluebrim.layout.shared.*;
-import com.bluebrim.menus.client.*;
-import com.bluebrim.page.shared.*;
-import com.bluebrim.resource.shared.*;
-import com.bluebrim.spellchecker.client.*;
-import com.bluebrim.spellchecker.impl.server.*;
-import com.bluebrim.text.client.*;
-import com.bluebrim.text.impl.server.*;
-import com.bluebrim.text.shared.*;
-import com.bluebrim.xml.shared.*;
+import com.bluebrim.base.shared.CoFactoryManager;
+import com.bluebrim.base.shared.CoLocalFactoryManager;
+import com.bluebrim.base.shared.CoNamed;
+import com.bluebrim.base.shared.CoStatusShower;
+import com.bluebrim.compositecontent.client.CoCompositeContentClient;
+import com.bluebrim.content.impl.server.CoCompositeContentServerImpl;
+import com.bluebrim.font.client.CoFontClient;
+import com.bluebrim.font.impl.client.CoFontRepositoryManager;
+import com.bluebrim.font.impl.server.CoFontServerImpl;
+import com.bluebrim.font.shared.CoAbstractFontMapper;
+import com.bluebrim.font.shared.CoFontException;
+import com.bluebrim.font.shared.CoFontRepositoryIF;
+import com.bluebrim.font.shared.CoFontServer;
+import com.bluebrim.font.shared.CoFontServerProvider;
+import com.bluebrim.gui.client.CoFrame;
+import com.bluebrim.gui.client.CoGUI;
+import com.bluebrim.gui.client.CoSplashScreen;
+import com.bluebrim.gui.client.CoUIConstants;
+import com.bluebrim.image.client.CoImageClient;
+import com.bluebrim.image.impl.server.CoLocalImageClient;
+import com.bluebrim.image.impl.shared.CoEpsImageReaderSpi;
+import com.bluebrim.layout.client.CoLayoutClient;
+import com.bluebrim.layout.impl.client.editor.CoLayoutEditor;
+import com.bluebrim.layout.impl.client.editor.CoLayoutEditorClientConstants;
+import com.bluebrim.layout.impl.client.editor.CoLayoutEditorConfiguration;
+import com.bluebrim.layout.impl.client.editor.CoMenuExtender;
+import com.bluebrim.layout.impl.server.CoLayoutServerImpl;
+import com.bluebrim.layout.impl.server.CoPageItemFactories;
+import com.bluebrim.layout.impl.server.CoPageItemPreferences;
+import com.bluebrim.layout.impl.shared.CoPageItemPreferencesIF;
+import com.bluebrim.layout.shared.CoLayoutParameters;
+import com.bluebrim.menus.client.CoMenuBar;
+import com.bluebrim.menus.client.CoMenuBuilder;
+import com.bluebrim.menus.client.CoSubMenu;
+import com.bluebrim.page.shared.CoPageSizeIF;
+import com.bluebrim.page.shared.CoPageSizeRegistry;
+import com.bluebrim.resource.shared.CoResourceLoader;
+import com.bluebrim.text.client.CoTextClient;
+import com.bluebrim.text.impl.server.CoTextServerImpl;
+import com.bluebrim.text.shared.CoTextServerProvider;
+import com.bluebrim.xml.shared.CoXmlConsumer;
+import com.bluebrim.xml.shared.CoXmlContext;
+import com.bluebrim.xml.shared.CoXmlReadException;
 
 /**
  * Starts <code>CoLayoutEditor</code> as a standalone application with
@@ -97,9 +129,9 @@ public class CoSolitaryLayoutEditor implements CoNamed {
         CoFontClient.setFontServer(fontServer);
         
         // SpellChecker
-    	shower.showStatus("Initialize spelling checker");
-        CoSpellCheckerServerImpl spellCheckerServer = new CoSpellCheckerServerImpl();
-        CoSpellCheckerClient.setSpellCheckerServer(spellCheckerServer);
+//    	shower.showStatus("Initialize spelling checker");
+//        CoSpellCheckerServerImpl spellCheckerServer = new CoSpellCheckerServerImpl();
+//        CoSpellCheckerClient.setSpellCheckerServer(spellCheckerServer);
         
 		// Image
     	shower.showStatus("Initialize image server");

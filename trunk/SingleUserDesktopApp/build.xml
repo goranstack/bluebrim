@@ -28,7 +28,7 @@
 
 	<target name="copy-bundled-jvm">
 		<copy todir="${build-dist-dir}">
-			<fileset dir="bundled-java" />
+			<fileset dir="bundled-java" excludes="readme.txt"/>
 		</copy>
 	</target>
 
@@ -40,10 +40,6 @@
 
 
 	<target name="dist-exe-version" depends="clean-all, init, svnRevision, copy-runtime-structure, copy-dist-jars-all, copy-bundled-jvm, create-exe-wrapper" description="Creates distribution (release)">
-		<zip destfile="${dist-dir}/layouteditor_${FILE_TSTAMP}.zip" basedir="${build-dist-dir}" />
-	</target>
-
-	<target name="test" depends="create-exe-wrapper" description="Creates distribution (release)">
 		<zip destfile="${dist-dir}/layouteditor_${FILE_TSTAMP}.zip" basedir="${build-dist-dir}" />
 		<delete file="${dist-dir}/${ant.project.name}.jar" />
 	</target>

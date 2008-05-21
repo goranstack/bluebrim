@@ -7,7 +7,7 @@
 <JVMSearchPath>exepath</JVMSearchPath>
 <JVMSearchPath>jview</JVMSearchPath>
 <arguments></arguments>
-<bundledJVMPath>build\dist\java\jre1.6.0_02</bundledJVMPath>
+<bundledJVMPath>build\dist\java\jre1.6</bundledJVMPath>
 <classPath>runtime\resources</classPath>
 <classPath>build\dist\resources</classPath>
 <classPath>build\dist\lib\AbstractCompositeContentClient.jar</classPath>
@@ -65,9 +65,6 @@
 <classPath>build\dist\lib\ShapeClient.jar</classPath>
 <classPath>build\dist\lib\ShapeShared.jar</classPath>
 <classPath>build\dist\lib\SingleUserDesktopApp.jar</classPath>
-<classPath>build\dist\lib\SpellCheckerClient.jar</classPath>
-<classPath>build\dist\lib\SpellCheckerServer.jar</classPath>
-<classPath>build\dist\lib\SpellCheckerShared.jar</classPath>
 <classPath>build\dist\lib\StrokeClient.jar</classPath>
 <classPath>build\dist\lib\StrokeServer.jar</classPath>
 <classPath>build\dist\lib\StrokeShared.jar</classPath>
