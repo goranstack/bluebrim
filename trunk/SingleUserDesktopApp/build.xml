@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="SingleUserDesktopApp" default="dist-exe-version">
+
+	<description>
+		Ant build file for the SingleUserDesktopApp project
+	</description>
+
+	<import file="../BuildTools/build_common.xml" />
+	<import file="../${ant.project.name}/build_classpath.xml" />
+
+	<!-- Targets -->
+
+	<target name="compile" depends="common.compile" description="Compiles this project">
+		<bluebrim.javac classpathref="classpath" />
+		<bluebrim.copy.resources_src />
+		<bluebrim.copy.resources />
+	</target>
+
+	<target name="jar" depends="common.jar" description="Creates jar-files for this project">
+		<bluebrim.jar destfile="${jars-dir}/${ant.project.name}.jar">
+			<zipgroupfileset refid="merged-jars" />
+		</bluebrim.jar>
+	</target>
+
+	<target name="copy-dist-jars" depends="jar">
+		<bluebrim.copy.deployjar file="${jars-dir}/${ant.project.name}.jar" todir="${build-dist-lib-dir}" />
+	</target>
+
+	<target name="copy-bundled-jvm">
+		<copy todir="${build-dist-dir}">
+			<fileset dir="bundled-java" />
+		</copy>
+	</target>
+
+	<target name="copy-runtime-structure">
+		<copy todir="${build-dist-dir}">
+			<fileset dir="runtime" />
+		</copy>
+	</target>
+
+
+	<target name="dist-exe-version" depends="clean-all, init, svnRevision, copy-runtime-structure, copy-dist-jars-all, copy-bundled-jvm, create-exe-wrapper" description="Creates distribution (release)">
+		<zip destfile="${dist-dir}/layouteditor_${FILE_TSTAMP}.zip" basedir="${build-dist-dir}" />
+	</target>
+
+	<target name="test" depends="create-exe-wrapper" description="Creates distribution (release)">
+		<zip destfile="${dist-dir}/layouteditor_${FILE_TSTAMP}.zip" basedir="${build-dist-dir}" />
+		<delete file="${dist-dir}/${ant.project.name}.jar" />
+	</target>
+
+</project>
