@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="src" path="/CoreClient"/>
+	<classpathentry exported="true" kind="src" path="/PageSizeShared"/>
+	<classpathentry kind="src" path="/XmlBase"/>
+	<classpathentry kind="src" path="/ShapeShared"/>
+	<classpathentry kind="src" path="/LengthUnitShared"/>
+	<classpathentry kind="src" path="/LengthUnitClient"/>
+	<classpathentry kind="output" path="classes-eclipse"/>
+</classpath>
