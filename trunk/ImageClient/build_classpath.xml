@@ -27,8 +27,6 @@
     <pathelement location="../ImageShared/build.xml" />
     <pathelement location="../LengthUnitClient/build.xml" />
     <pathelement location="../PaintClient/build.xml" />
-    <pathelement location="../SpellCheckerShared/build.xml" />
-    <pathelement location="../SpellCheckerClient/build.xml" />
     <pathelement location="../TextClient/build.xml" />
     <pathelement location="../Viewable/build.xml" />
   </path>
