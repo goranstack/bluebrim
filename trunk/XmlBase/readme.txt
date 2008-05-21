@@ -1,0 +1,1 @@
+There is no future. Crimson is dead. Java 1.5 will use Xerces
