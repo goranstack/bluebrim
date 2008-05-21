@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project name="common" default="init">
+
+	<property environment="env" />
+
+	<property name="src-dir" value="src" />
+	<property name="classes-dir" value="build/classes" />
+	<property name="jars-dir" value="build/jars" />
+	<property name="temp-dir" value="build/temp" />
+	<property name="dist-dir" value="dist" />
+	<property name="dist-templates-dir" value="dist-templates" />
+
+	<presetdef name="loe.javac">
+		<javac srcdir="${src-dir}" destdir="${classes-dir}" target="1.4" compiler="modern" debug="on" debuglevel="lines,source,vars" optimize="off" deprecation="off">
+		</javac>
+	</presetdef>
+
+	<presetdef name="loe.jar">
+		<jar basedir="${classes-dir}" compress="true">
+		</jar>
+	</presetdef>
+
+
+	<!-- Init target -->
+
+	<target name="init" description="Init this project">
+		<tstamp />
+		<mkdir dir="${classes-dir}" />
+		<mkdir dir="${jars-dir}" />
+	</target>
+
+	<!-- Compilation targets -->
+
+	<target name="compile" depends="init">
+		<echo>Compiling ${ant.project.name}...</echo>
+		<!-- This target does nothing. It needs to be overriden. -->
+	</target>
+
+	<target name="compile-all" description="Compiles all projects">
+		<subant target="compile" buildpathref="subprojects" failonerror="true" />
+		<antcall target="compile" />
+	</target>
+
+	<!-- JAR targets -->
+
+	<target name="jar" depends="init, compile">
+		<echo>Creating JAR files for ${ant.project.name}...</echo>
+		<!-- This target does nothing. It needs to be overriden. -->
+	</target>
+
+	<target name="jar-all" description="Creates jar-files for all projects">
+		<subant target="jar" buildpathref="subprojects" failonerror="true" />
+		<antcall target="jar" />
+	</target>
+
+	<!-- Rebuild targets -->
+
+	<target name="rebuild" depends="clean, jar" description="Rebuild JAR files for this project">
+	</target>
+
+	<target name="rebuild-all" depends="clean-all, jar-all" description="Rebuild JAR files for all projects">
+	</target>
+
+	<!-- Cleaning targets -->
+
+	<target name="clean" description="Deletes generated files for this project">
+		<echo>Cleaning ${ant.project.name}...</echo>
+		<delete dir="${classes-dir}" />
+		<delete dir="${jars-dir}" />
+	</target>
+
+	<target name="clean-all" description="Deletes generated files for all projects">
+		<subant target="clean" buildpathref="subprojects" failonerror="true" />
+		<antcall target="clean" />
+	</target>
+
+</project>
