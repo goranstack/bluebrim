@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/ContentXml"/>
+	<classpathentry kind="src" path="/TextShared"/>
+	<classpathentry kind="src" path="/ImageServer"/>
+	<classpathentry kind="src" path="/AbstractContentServer"/>
+	<classpathentry kind="src" path="/TextXml"/>
+	<classpathentry kind="lib" path="META-INF"/>
+	<classpathentry kind="output" path="classes-eclipse"/>
+</classpath>
