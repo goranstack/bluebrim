@@ -1,24 +1,65 @@
 package com.bluebrim.text.impl.client;
 
-import java.awt.*;
-import java.awt.datatransfer.*;
-import java.awt.event.*;
-import java.io.*;
+import java.awt.Cursor;
+import java.awt.Dialog;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.Window;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.datatransfer.Transferable;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 
-import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
+import javax.swing.Action;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextPane;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Caret;
+import javax.swing.text.DefaultEditorKit;
+import javax.swing.text.Document;
+import javax.swing.text.Element;
+import javax.swing.text.JTextComponent;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.TextAction;
+import javax.swing.text.Utilities;
+import javax.swing.text.View;
 
-import com.bluebrim.base.shared.*;
-import com.bluebrim.font.shared.*;
-import com.bluebrim.gui.client.*;
-import com.bluebrim.spellchecker.impl.client.*;
-import com.bluebrim.spellchecker.shared.*;
-import com.bluebrim.swing.client.*;
-import com.bluebrim.text.impl.client.actions.*;
-import com.bluebrim.text.impl.shared.*;
-import com.bluebrim.text.shared.*;
-import com.bluebrim.text.shared.swing.*;
+import com.bluebrim.base.shared.CoLengthUnit;
+import com.bluebrim.base.shared.CoPropertyChangeEvent;
+import com.bluebrim.base.shared.CoPropertyChangeListener;
+import com.bluebrim.font.shared.CoUnicode;
+import com.bluebrim.gui.client.CoGUI;
+import com.bluebrim.swing.client.CoUndoHandler;
+import com.bluebrim.text.impl.client.actions.CoDeltaFloatCharacterOrParagraphAction;
+import com.bluebrim.text.impl.shared.CoHyphenationConstants;
+import com.bluebrim.text.impl.shared.CoStyleConstants;
+import com.bluebrim.text.impl.shared.CoTextSearcher;
+import com.bluebrim.text.shared.CoTextConstants;
+import com.bluebrim.text.shared.swing.CoCommentView;
 
 /**
  * Subklass av JTextPane som arbetar mot en com.bluebrim.text.shared.CoStyledDocumentIF-instans.
@@ -55,7 +96,7 @@ public abstract class CoAbstractTextEditor extends JTextPane implements com.blue
 
 	protected CoStyledTextPopupMenu m_popupMenu;
 
-	private CoSpellingSession m_ssce = new CoSpellingSession();
+//	private CoSpellingSession m_ssce = new CoSpellingSession();
 
 	private CoTextSearcher m_searcher;
 	private CoTextSearchDialog m_searchDialog;
@@ -456,24 +497,26 @@ private void checkSelectedAttributes( int reason )
 //	System.err.println( ( (com.bluebrim.text.shared.CoStyledDocument) doc ).getAttributes( pos, len ) );
 
 }
-public void checkSpelling( CoSpellCheckPropertiesIF properties )
+public void checkSpelling( Object properties )
 {
-	m_ssce.update( properties );
-	
-	CoTextPaneWordParser parser =
-		new CoTextPaneWordParser( this,
-			                       m_ssce.getOption( CoSpellingSession.SPLIT_HYPHENATED_WORDS_OPT ),
-			                       false );
-		
-	CoSpellCheckDialog d =
-		new CoSpellCheckDialog( CoGUI.getFrameFor(this),
-			                      m_ssce,
-			                      parser,
-			                      m_ssce.m_comparator,
-			                      m_ssce.m_userLexicons );
-		
-	d.minSuggestDepth = m_ssce.m_minSuggestDepth;
-	d.setVisible( true );
+//	m_ssce.update( properties );
+//	
+//	CoTextPaneWordParser parser =
+//		new CoTextPaneWordParser( this,
+//			                       m_ssce.getOption( CoSpellingSession.SPLIT_HYPHENATED_WORDS_OPT ),
+//			                       false );
+//		
+//	CoSpellCheckDialog d =
+//		new CoSpellCheckDialog( CoGUI.getFrameFor(this),
+//			                      m_ssce,
+//			                      parser,
+//			                      m_ssce.m_comparator,
+//			                      m_ssce.m_userLexicons );
+//		
+//	d.minSuggestDepth = m_ssce.m_minSuggestDepth;
+//	d.setVisible( true );
+	throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
+
 }
 public void copy()
 {
@@ -581,11 +624,13 @@ private void doImportStyledDocument( File f )
 	JOptionPane.showMessageDialog( this, "Could not parse file " + f.getName(), "", JOptionPane.ERROR_MESSAGE );
 //	setCursor( c );
 }
-public void editSpellCheckOptions( Frame f, CoSpellCheckPropertiesIF properties )
+public void editSpellCheckOptions( Frame f, Object properties )
 {
-	CoSpellOptionsDialog d = new CoSpellOptionsDialog( f, properties );
-	d.setVisible( true );
+//	CoSpellOptionsDialog d = new CoSpellOptionsDialog( f, properties );
+//	d.setVisible( true );
+	throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
 }
+
 private CoCommentView findCommentView( View V, int x, int y )
 {
 	int I = V.getViewCount();

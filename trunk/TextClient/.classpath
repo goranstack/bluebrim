@@ -7,7 +7,6 @@
 	<classpathentry kind="src" path="/XmlBase"/>
 	<classpathentry kind="src" path="/FontClient"/>
 	<classpathentry kind="src" path="/RenderingShared"/>
-	<classpathentry kind="src" path="/SpellCheckerClient"/>
 	<classpathentry kind="src" path="/AbstractContentClient"/>
 	<classpathentry kind="src" path="/PaintClient"/>
 	<classpathentry kind="src" path="/LengthUnitClient"/>

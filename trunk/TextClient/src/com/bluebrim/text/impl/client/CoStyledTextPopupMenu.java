@@ -1,15 +1,18 @@
 package com.bluebrim.text.impl.client;
 
-import java.awt.*;
-import java.rmi.*;
+import java.awt.Component;
 
-import javax.swing.*;
-import javax.swing.text.*;
+import javax.swing.Action;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.text.AttributeSet;
 
-import com.bluebrim.menus.client.*;
-import com.bluebrim.spellchecker.client.*;
-import com.bluebrim.spellchecker.shared.*;
-import com.bluebrim.text.shared.*;
+import com.bluebrim.menus.client.CoMenuBuilder;
+import com.bluebrim.menus.client.CoMenuItem;
+import com.bluebrim.menus.client.CoPopupMenu;
+import com.bluebrim.menus.client.CoSubMenu;
+import com.bluebrim.text.shared.CoTextEditorContextIF;
 
 /*
  * Skapar en högerknappsmeny.
@@ -24,15 +27,16 @@ import com.bluebrim.text.shared.*;
 
 public class CoStyledTextPopupMenu extends CoPopupMenu {
 
-	protected CoSpellCheckPropertiesIF getSpellCheckProperties() {
-		try
-        {
-            return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
-        } catch (RemoteException e)
-        {
-            throw new RuntimeException(e);
-        }
-
+	protected Object getSpellCheckProperties() {
+//		try
+//        {
+//            return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
+//        } catch (RemoteException e)
+//        {
+//            throw new RuntimeException(e);
+//        }
+//
+		throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
 	}
 	protected void setAllEnabled(boolean b) {
 		setAllEnabled(b, this);
