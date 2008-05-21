@@ -18,7 +18,6 @@
 	<classpathentry kind="src" path="/PageSizeClient"/>
 	<classpathentry kind="src" path="/LayoutManagerExJobb"/>
 	<classpathentry kind="src" path="/FormulaShared"/>
-	<classpathentry kind="src" path="/SpellCheckerClient"/>
 	<classpathentry kind="src" path="/LengthUnitClient"/>
 	<classpathentry kind="src" path="/Viewable"/>
 	<classpathentry kind="src" path="/CompositeContentShared"/>

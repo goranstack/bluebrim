@@ -1,11 +1,7 @@
 package com.bluebrim.layout.impl.client.editor;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.rmi.*;
-
-import com.bluebrim.spellchecker.client.*;
-import com.bluebrim.spellchecker.shared.*;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
 
 /**
  * Layout editor operation: Open the ui for editing spell checker preferences
@@ -31,14 +27,14 @@ public class CoEditSpellingPrefs extends CoLayoutEditorAction {
 		m_editor.m_styledTextEditor.editSpellCheckOptions((Frame) m_editor.getWindow(), getSpellCheckProperties());
 	}
 
-	protected CoSpellCheckPropertiesIF getSpellCheckProperties() {
-		try
-        {
-            return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
-        } catch (RemoteException e)
-        {
-            throw new RuntimeException(e);
-        }
-
+	protected Object getSpellCheckProperties() {
+//		try
+//        {
+//            return CoSpellCheckerClient.getSpellCheckerServer().getSpellCheckProperties();
+//        } catch (RemoteException e)
+//        {
+//            throw new RuntimeException(e);
+//        }
+		throw new UnsupportedOperationException("Until Wintertree spell checker is replaced by a GPL spell checker");
 	}
 }
