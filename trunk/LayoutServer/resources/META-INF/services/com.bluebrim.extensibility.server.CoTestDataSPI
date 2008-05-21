@@ -1,0 +1,4 @@
+com.bluebrim.layout.impl.server.test.CoLayoutTestData
+com.bluebrim.layout.impl.server.test.CoLayoutTemplateTestData
+com.bluebrim.layout.impl.server.test.CoPaperPageTemplateTestData
+com.bluebrim.layout.impl.server.test.CoPageItemTestData
