@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project name="CoreShared" default="jar">
+
+	<description>
+		Ant build file for the CoreShared project
+	</description>
+
+	<import file="../BuildTools/build_common.xml" />
+	<import file="../${ant.project.name}/build_classpath.xml" />
+
+	<!-- Targets -->
+
+	<target name="compile" depends="common.compile" description="Compiles this project">
+		<bluebrim.javac classpathref="classpath" />
+		<bluebrim.copy.resources_src />
+		<!-- bluebrim.copy.resources / Uncomment if the project has a resource folder-->
+	</target>
+
+	<target name="jar" depends="common.jar" description="Creates jar-files for this project">
+		<bluebrim.jar destfile="${jars-dir}/${ant.project.name}.jar">
+			<zipgroupfileset refid="merged-jars" />
+		</bluebrim.jar>
+	</target>
+
+	<target name="copy-dist-jars" depends="jar">
+		<!-- TODO Copy the jar files that should be included in the distribution -->
+		<bluebrim.copy.deployjar file="${jars-dir}/${ant.project.name}.jar" todir="${build-dist-lib-dir}" />
+		<!-- bluebrim.copy.deployjar file="external-jars/EXAMPLE.jar" todir="${build-dist-externaljars-dir}" / -->
+	</target>
+
+</project>
