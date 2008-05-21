@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/ContentXml"/>
+	<classpathentry kind="src" path="/TextXml"/>
+	<classpathentry kind="src" path="/LayoutServer"/>
+	<classpathentry kind="src" path="/StrokeShared"/>
+	<classpathentry kind="src" path="/AbstractContentServer"/>
+	<classpathentry kind="src" path="/LayoutManagerExJobb"/>
+	<classpathentry kind="lib" path="META-INF"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Crimson"/>
+	<classpathentry kind="output" path="classes-eclipse"/>
+</classpath>
