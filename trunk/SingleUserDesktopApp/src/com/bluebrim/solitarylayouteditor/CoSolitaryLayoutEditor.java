@@ -32,6 +32,7 @@ import com.bluebrim.base.shared.CoFactoryManager;
 import com.bluebrim.base.shared.CoLocalFactoryManager;
 import com.bluebrim.base.shared.CoNamed;
 import com.bluebrim.base.shared.CoStatusShower;
+import com.bluebrim.base.shared.debug.CoAssertion;
 import com.bluebrim.compositecontent.client.CoCompositeContentClient;
 import com.bluebrim.content.impl.server.CoCompositeContentServerImpl;
 import com.bluebrim.font.client.CoFontClient;
@@ -91,6 +92,7 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 //		UIManager.setLookAndFeel("com.stefankrause.xplookandfeel.XPLookAndFeel"); 
 //		Icon splashImage = CoResourceLoader.loadIcon("solitarylayouteditor", "BlueBrimLogo.png");
 		Locale.setDefault(Locale.ENGLISH);
+		CoAssertion.SIMULATION_SUPPORT = true;  // No client server is desirable
 		URL splashUrl = CoSolitaryLayoutEditor.class.getResource("/BlueBrimLogo.png");
 		if (splashUrl == null) 
 			throw new RuntimeException("Can't find resource /BlueBrimLogo.png");
@@ -431,8 +433,10 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 			try {
 				manager.installFontFile(file, shower);
 			} catch (RuntimeException e) {
-				System.out.println("Unable to install font " + file.getName() + " " + e);				
+				e.printStackTrace();
+				System.out.println("Unable to install font " + file.getName() + " " + e);
 			} catch (CoFontException e) {
+				e.printStackTrace();
 				System.out.println("Unable to install font " + file.getName() + " " + e);
 			}
 		};
