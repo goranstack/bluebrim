@@ -177,7 +177,8 @@ protected com.bluebrim.font.shared.metrics.CoPairKerningMetrics getPairKerningMe
 		for (int i = 0; i < distances.length; i++) {
 			// For each left glyph, find all chars that this glyph maps to
 			Set leftUnicodeChars = (Set) glyphMapping.get(new Integer(leftGlyphs[i]));
-
+			if (leftUnicodeChars == null)		// NPE fix without understanding of the code /GStack
+				continue;
 			// ... and iterate through all these unicode chars
 			Iterator leftCharIterator = leftUnicodeChars.iterator();
 			while (leftCharIterator.hasNext()) {
