@@ -4,6 +4,7 @@ import java.awt.font.*;
 import java.io.*;
 import java.util.*;
 
+import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.*;
 
 import com.bluebrim.base.shared.*;
@@ -54,6 +55,8 @@ public class CoFontRepository implements CoFontRepositoryIF {
 	private Map m_fontFileContainers = new HashMap(); // [ CoFontFace -> CoFontFileContainers ]
 
 	private String m_fallbackFamily;
+	
+	private File m_fontsDir;
 
 	// FONT CATALOGS
 
@@ -362,7 +365,7 @@ public class CoFontRepository implements CoFontRepositoryIF {
 	private synchronized void installFontFile(String fileName, CoFontFaceSpec spec) throws CoFontException {
 		m_shower.showStatus("Installing font " + spec + " from file " + fileName);
 
-		File file = new File(fileName);
+		File file = new File(m_fontsDir, fileName);
 		if (!file.exists())
 			throw new CoFontException("Missing file: "+ file.getPath());
 		CoFontFileInfoExtractor parser = CoAbstractFontFileInfoExtractor.parseFontFile(file);
@@ -395,20 +398,23 @@ public class CoFontRepository implements CoFontRepositoryIF {
 		markAsModified();
 	}
 	
-	private void initializeFromFontMappingFile() {
-		String iniFileName = "/fonts.ini";
-		InputStream iniStream = getClass().getResourceAsStream(iniFileName);
-		if (iniStream == null)
+	private void initializeFromFontMappingFile()
+	{
+		String iniFileName = "fonts.ini";
+		try
+		{
+			ClassPathResource classPathResource = new ClassPathResource(iniFileName);
+			m_fontsDir = classPathResource.getFile().getParentFile();
+			InputStream iniStream = classPathResource.getInputStream();
+			Reader initFileReader = new InputStreamReader(iniStream);
+			readFontInitFile(initFileReader);
+			initFileReader.close();
+			iniStream.close();
+		}
+		catch (IOException ioe)
+		{
 			System.err.println("ERROR: Font ini file " + iniFileName + " not found.");
-		else
-			try {
-				Reader initFileReader = new InputStreamReader(iniStream);
-				readFontInitFile(initFileReader);
-				initFileReader.close();
-				iniStream.close();
-			} catch (IOException ioe) {
-				System.err.println(ioe);
-			}
+		}
 	}
 
 	private boolean readFromXmlFile() {
@@ -518,15 +524,6 @@ public class CoFontRepository implements CoFontRepositoryIF {
 	}
 
 	private void readFontInitFile(Reader initFileReader) {
-		String fontHome = System.getProperty(PROPERTY_KEY_FONT_PATH);
-
-//		// Only for development (NOTE: Does not work if classes in JAR file. /Markus)
-//		if (fontHome == null || fontHome.length() == 0) {
-//			// WARNING: Don't copy this anywhere!
-//			fontHome = ClassLoader.getSystemResource("font/server").getFile();
-//		}
-
-		fontHome += File.separatorChar;
 
 		try {
 
@@ -539,10 +536,10 @@ public class CoFontRepository implements CoFontRepositoryIF {
 				line = in.readLine();
 				if (line == null)
 					break; // End while loop if EOF
-				if (line.charAt(0) == '#')
-					continue; // Skip line if comment
 				if (line.length() == 0)
 					continue; // Skip empty lines
+				if (line.charAt(0) == '#')
+					continue; // Skip line if comment
 
 				StringTokenizer tokenizer = new StringTokenizer(line, ",");
 				if (tokenizer.countTokens() < 6) {
@@ -558,7 +555,7 @@ public class CoFontRepository implements CoFontRepositoryIF {
 				int variant = Integer.parseInt(tokenizer.nextToken());
 				int stretch = Integer.parseInt(tokenizer.nextToken());
 
-				installFontFile(fontHome + fileName, new CoFontFaceSpec(fontName, weight, style, variant, stretch));
+				installFontFile(fileName, new CoFontFaceSpec(fontName, weight, style, variant, stretch));
 			}
 		} catch (CoFontException e) {
 			System.out.println("ERROR: Test data fonts were not correctly read!!!");
