@@ -1,6 +1,7 @@
 package com.bluebrim.solitarylayouteditor;
 
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +9,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -27,6 +29,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileFilter;
 
 import org.apache.batik.util.gui.MemoryMonitor;
+import org.springframework.core.io.ClassPathResource;
 
 import com.bluebrim.base.shared.CoFactoryManager;
 import com.bluebrim.base.shared.CoLocalFactoryManager;
@@ -99,7 +102,7 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 		Icon splashImage = new ImageIcon(splashUrl);
 		CoSplashScreen splash = new CoSplashScreen(splashImage, CoUIConstants.BLUEBRIM_YELLOW);
   		splash.toFront();
-   		splash.setVisible(true);		
+   	splash.setVisible(true);
 		CoSolitaryLayoutEditor app = new CoSolitaryLayoutEditor(splash);		
 		app.run(splash);
  		splash.close();
@@ -416,6 +419,7 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 	}
 	
 	private void installFonts(CoStatusShower shower) {
+		loadFonts();
 		CoFontRepositoryManager manager = CoFontRepositoryManager.getSingleton();
 		installFonts(shower, manager, getJavaFontDir());
 //		System.out.println("Fonts in GraphicsEnvironment:");
@@ -445,6 +449,48 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 	private File getJavaFontDir() {
 		String javaHome = System.getProperty("java.home");
 		return new File(javaHome, "lib/fonts");
+	}
+	
+	private void loadFonts()
+	{
+		File fontsDir = null;
+		try
+		{
+			fontsDir = new ClassPathResource("fonts.ini").getFile().getParentFile();
+		}
+		catch (IOException e)
+		{
+			throw new RuntimeException("Error when trying to read the fonts.ini file", e);
+		}
+		File[] files = fontsDir.listFiles(new FilenameFilter(){
+
+			@Override
+			public boolean accept(File dir, String name)
+			{
+				return name.toLowerCase().endsWith(".ttf");
+			}});
+		for (int i = 0; i < files.length; i++)
+		{
+			try
+			{
+				try
+				{
+					Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(files[i]));
+				}
+				catch (FileNotFoundException e)
+				{
+					throw new RuntimeException("There is no file: " + files[i].getAbsolutePath());
+				}
+				catch (IOException e)
+				{
+					throw new RuntimeException("Error when reading: " + files[i].getAbsolutePath());
+				}
+			}
+			catch (FontFormatException e)
+			{
+				System.out.println(files[i].getPath() + " is no true type font file");
+			}
+		}
 	}
 	
 //	private String getHostFontDir()

@@ -16,7 +16,7 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.debug.ui.target_debug_perspective" value="perspective_default"/>
 <stringAttribute key="org.eclipse.debug.ui.target_run_perspective" value="perspective_default"/>
-<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.6 bundled"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_05"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.bluebrim.solitarylayouteditor.CoSolitaryLayoutEditor"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SingleUserDesktopApp"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms128M -Xmx384M -Dcalvin.debug.assertions=false"/>
