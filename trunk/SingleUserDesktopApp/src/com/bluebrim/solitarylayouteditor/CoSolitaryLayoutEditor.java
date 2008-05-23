@@ -469,13 +469,16 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 			{
 				return name.toLowerCase().endsWith(".ttf");
 			}});
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
 		for (int i = 0; i < files.length; i++)
 		{
 			try
 			{
 				try
 				{
-					Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(files[i]));
+					Font font = Font.createFont(Font.TRUETYPE_FONT, files[i]);
+					ge.registerFont(font);
 				}
 				catch (FileNotFoundException e)
 				{
