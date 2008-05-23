@@ -14,12 +14,11 @@ public class FontLoadingDemo
 	{
 		FontLoadingDemo instance = new FontLoadingDemo();
 		instance.loadFont(FontLoadingDemo.class.getResourceAsStream("VeraSe.ttf"), Font.TRUETYPE_FONT);
-		instance.loadFont(FontLoadingDemo.class.getResourceAsStream("a010013l.pfb"), Font.TYPE1_FONT);
+		instance.loadFont(FontLoadingDemo.class.getResourceAsStream("VeraSeBd.ttf"), Font.TRUETYPE_FONT);
 	}
 
 	private void loadFont(InputStream in, int fontType) throws FontFormatException, IOException
 	{
-		in = FontLoadingDemo.class.getResourceAsStream("VeraSe.ttf");
 		Font dynamicFont = Font.createFont(fontType, in);
 		Font dynamicFont32Pt = dynamicFont.deriveFont(32f);
 
