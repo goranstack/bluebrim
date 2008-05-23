@@ -5,5 +5,7 @@
 	<classpathentry exported="true" kind="src" path="/CommonShared"/>
 	<classpathentry kind="src" path="/XmlBase"/>
 	<classpathentry exported="true" kind="src" path="/Base"/>
+	<classpathentry exported="true" kind="lib" path="external-jars/spring.jar" sourcepath="external-jars/spring-src.zip"/>
+	<classpathentry kind="lib" path="external-jars/commons-logging-1.1.jar"/>
 	<classpathentry kind="output" path="classes-eclipse"/>
 </classpath>
