@@ -161,14 +161,120 @@ public class CoTextServerImpl implements CoTextServer
 		styleRule.clear();
 
 		MutableAttributeSet as = null;
+// 		Corren orginal
+//		as = createParagraphTypographyRule("Bildtext", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(8));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//
+//		as = createParagraphTypographyRule("Text", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Concorde BE");
+//		CoStyleConstants.setFontSize(as, new Float(8.5));
+//		CoStyleConstants.setFirstLineIndent(as, new Float(3 / 25.4 * 72));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setAlignment(as, CoTextConstants.ALIGN_JUSTIFIED);
+//		CoStyleConstants.setAdjustToBaseLineGrid(as, Boolean.TRUE);
+//		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
+//
+//		as = createParagraphTypographyRule("Dateringstext", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(8));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setAllCaps(as, Boolean.TRUE);
+//		CoStyleConstants.setAdjustToBaseLineGrid(as, Boolean.TRUE);
+//
+//		as = createParagraphTypographyRule("Fotobyline", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Medium");
+//		CoStyleConstants.setFontSize(as, new Float(7));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 2));
+//		CoStyleConstants.setAlignment(as, CoTextConstants.ALIGN_RIGHT);
+//
+//		as = createParagraphTypographyRule("Etikett", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(18));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setSpaceBelow(as, new Float(1.5 / 25.4 * 72));
+//
+//		as = createParagraphTypographyRule("Ingresstext", styleRule); // OK
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(9.5));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setSpaceBelow(as, new Float(1 / 25.4 * 72));
+//		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
+//
+//		as = createParagraphTypographyRule("Ingressindrag", styleRule); // OK
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(9.5));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setSpaceBelow(as, new Float(1 / 25.4 * 72));
+//		CoStyleConstants.setFirstLineIndent(as, new Float(9));
+//		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
+//
+//		as = createParagraphTypographyRule("Kortisrubrik", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(9.5));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//
+//		as = createParagraphTypographyRule("Kortistext", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Concorde BE");
+//		CoStyleConstants.setFontSize(as, new Float(8.5));
+//		CoStyleConstants.setFirstLineIndent(as, new Float(3 / 25.4 * 72));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
+//
+//		as = createParagraphTypographyRule("Mellanrubrik", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(9.5));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setSpaceAbove(as, new Float(2 / 25.4 * 72));
+//		CoStyleConstants.setSpaceBelow(as, new Float(0.5 / 25.4 * 72));
+//
+//		as = createParagraphTypographyRule("Rubrik", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Concorde BE");
+//		CoStyleConstants.setFontSize(as, new Float(48));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//
+//		as = createParagraphTypographyRule("Signatur", styleRule);
+//		CoStyleConstants.setFontFamily(as, "Futura Book");
+//		CoStyleConstants.setFontSize(as, new Float(8));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setAllCaps(as, Boolean.TRUE);
+//		CoStyleConstants.setAdjustToBaseLineGrid(as, Boolean.TRUE);
+//		CoStyleConstants.setAlignment(as, CoTextConstants.ALIGN_RIGHT);
+//
+//		as = createParagraphTypographyRule("Faktarubrik", styleRule);
+//		CoStyleConstants.setFontFamily(as, "ITC Franklin Gothic");
+//		CoStyleConstants.setFontSize(as, new Float(12));
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//
+//		as = createParagraphTypographyRule("Faktatext", styleRule);
+//		CoStyleConstants.setFontFamily(as, "ITC Franklin Gothic");
+//		CoStyleConstants.setFontSize(as, new Float(8));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
+//
+//		as = createParagraphTypographyRule("Idagrubrik", styleRule);
+//		CoStyleConstants.setFontFamily(as, "ITC Franklin Gothic");
+//		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
+//		CoStyleConstants.setFontSize(as, new Float(8));
+//		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
+//		CoStyleConstants.setSpaceAbove(as, new Float(1 / 25.4 * 72));
 
-		as = createParagraphTypographyRule("Bildtext", styleRule);
+		as = createParagraphTypographyRule("Caption", styleRule);
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(8));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
 
-		as = createParagraphTypographyRule("Text", styleRule);
+		as = createParagraphTypographyRule("Body", styleRule);
 		CoStyleConstants.setFontFamily(as, "Concorde BE");
 		CoStyleConstants.setFontSize(as, new Float(8.5));
 		CoStyleConstants.setFirstLineIndent(as, new Float(3 / 25.4 * 72));
@@ -177,7 +283,7 @@ public class CoTextServerImpl implements CoTextServer
 		CoStyleConstants.setAdjustToBaseLineGrid(as, Boolean.TRUE);
 		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
 
-		as = createParagraphTypographyRule("Dateringstext", styleRule);
+		as = createParagraphTypographyRule("Dateline", styleRule);
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(8));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
@@ -185,19 +291,19 @@ public class CoTextServerImpl implements CoTextServer
 		CoStyleConstants.setAllCaps(as, Boolean.TRUE);
 		CoStyleConstants.setAdjustToBaseLineGrid(as, Boolean.TRUE);
 
-		as = createParagraphTypographyRule("Fotobyline", styleRule);
+		as = createParagraphTypographyRule("Photo credit", styleRule);
 		CoStyleConstants.setFontFamily(as, "Futura Medium");
 		CoStyleConstants.setFontSize(as, new Float(7));
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 2));
 		CoStyleConstants.setAlignment(as, CoTextConstants.ALIGN_RIGHT);
 
-		as = createParagraphTypographyRule("Etikett", styleRule);
+		as = createParagraphTypographyRule("Kicker", styleRule);
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(18));
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
 		CoStyleConstants.setSpaceBelow(as, new Float(1.5 / 25.4 * 72));
 
-		as = createParagraphTypographyRule("Ingresstext", styleRule); // OK
+		as = createParagraphTypographyRule("Lead", styleRule); // OK
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(9.5));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
@@ -205,7 +311,7 @@ public class CoTextServerImpl implements CoTextServer
 		CoStyleConstants.setSpaceBelow(as, new Float(1 / 25.4 * 72));
 		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
 
-		as = createParagraphTypographyRule("Ingressindrag", styleRule); // OK
+		as = createParagraphTypographyRule("Lead indent", styleRule); // OK
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(9.5));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
@@ -227,7 +333,7 @@ public class CoTextServerImpl implements CoTextServer
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
 		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
 
-		as = createParagraphTypographyRule("Mellanrubrik", styleRule);
+		as = createParagraphTypographyRule("Subhead", styleRule);
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(9.5));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
@@ -235,12 +341,12 @@ public class CoTextServerImpl implements CoTextServer
 		CoStyleConstants.setSpaceAbove(as, new Float(2 / 25.4 * 72));
 		CoStyleConstants.setSpaceBelow(as, new Float(0.5 / 25.4 * 72));
 
-		as = createParagraphTypographyRule("Rubrik", styleRule);
+		as = createParagraphTypographyRule("Headline", styleRule);
 		CoStyleConstants.setFontFamily(as, "Concorde BE");
 		CoStyleConstants.setFontSize(as, new Float(48));
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
 
-		as = createParagraphTypographyRule("Signatur", styleRule);
+		as = createParagraphTypographyRule("Byline", styleRule);
 		CoStyleConstants.setFontFamily(as, "Futura Book");
 		CoStyleConstants.setFontSize(as, new Float(8));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
@@ -249,24 +355,17 @@ public class CoTextServerImpl implements CoTextServer
 		CoStyleConstants.setAdjustToBaseLineGrid(as, Boolean.TRUE);
 		CoStyleConstants.setAlignment(as, CoTextConstants.ALIGN_RIGHT);
 
-		as = createParagraphTypographyRule("Faktarubrik", styleRule);
+		as = createParagraphTypographyRule("Sidebar head", styleRule);
 		CoStyleConstants.setFontFamily(as, "ITC Franklin Gothic");
 		CoStyleConstants.setFontSize(as, new Float(12));
 		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
 
-		as = createParagraphTypographyRule("Faktatext", styleRule);
+		as = createParagraphTypographyRule("Sidebar text", styleRule);
 		CoStyleConstants.setFontFamily(as, "ITC Franklin Gothic");
 		CoStyleConstants.setFontSize(as, new Float(8));
 		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
 		CoStyleConstants.setHyphenation(as, "Liang 2 2 4");
-
-		as = createParagraphTypographyRule("Idagrubrik", styleRule);
-		CoStyleConstants.setFontFamily(as, "ITC Franklin Gothic");
-		CoStyleConstants.setWeight(as, CoFontAttribute.BOLD);
-		CoStyleConstants.setFontSize(as, new Float(8));
-		CoStyleConstants.setLeading(as, new CoLeading(CoLeading.OFFSET, 1));
-		CoStyleConstants.setSpaceAbove(as, new Float(1 / 25.4 * 72));
 
 		return styleRule;
 	}
