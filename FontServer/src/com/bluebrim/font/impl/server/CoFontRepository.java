@@ -46,13 +46,13 @@ public class CoFontRepository implements CoFontRepositoryIF {
 	
 	// FONT FACES (MAPPING AND BINARY DATA)
 
-	private Set m_fontFaces = new HashSet(); // [ CoFontFace ]
-	private Map m_specMapping = new HashMap(); // [ CoFontFaceSpec -> CoFontFace ]
+	private Set<CoFontFace> m_fontFaces = new HashSet<CoFontFace>();
+	private Map<CoFontFaceSpec, CoFontFace> m_specMapping = new HashMap<CoFontFaceSpec, CoFontFace>();
 
-	private Map m_metricsDataItems = new HashMap(); // [ CoFontFace -> metrics.CoFontMetricsData ]
-	private Map m_awtDataItems = new HashMap(); // [ CoFontFace -> CoFontAwtData ]
-	private Map m_postscriptDataItems = new HashMap(); // [ CoFontFace -> CoFontPostscriptData ]
-	private Map m_fontFileContainers = new HashMap(); // [ CoFontFace -> CoFontFileContainers ]
+	private Map<CoFontFace, CoFontMetricsData> m_metricsDataItems = new HashMap<CoFontFace, CoFontMetricsData>();
+	private Map<CoFontFace, CoFontAwtData> m_awtDataItems = new HashMap<CoFontFace, CoFontAwtData>();
+	private Map<CoFontFace, CoFontPostscriptData> m_postscriptDataItems = new HashMap<CoFontFace, CoFontPostscriptData>();
+	private Map<CoFontFace, CoFontFileContainer> m_fontFileContainers = new HashMap<CoFontFace, CoFontFileContainer>();
 
 	private String m_fallbackFamily;
 	
@@ -669,7 +669,7 @@ public class CoFontRepository implements CoFontRepositoryIF {
 			if (XML_FONT_FACES.equals(parameter)) {
 				//			m_fontFaces = new HashSet(); // exists in static construction
 				while (i.hasNext()) {
-					m_fontFaces.add(i.next());
+					m_fontFaces.add((CoFontFace) i.next());
 				}
 			} else if (XML_FONT_FAMILIES.equals(parameter)) {
 				//			m_fontFamilies = new CoFontCatalog();	// exists in static construction
