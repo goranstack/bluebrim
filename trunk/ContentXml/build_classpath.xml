@@ -37,6 +37,7 @@
     <!-- External jars -->
     <fileset dir=".." id="external-jars">
       <include name="Crimson/crimson.jar" />
+      <include name="CoreShared/external-jars/spring.jar" />
       <include name="ContentXml/resources" />
     </fileset>
     
