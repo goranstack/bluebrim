@@ -17,7 +17,7 @@
   <path id="classpath">
     <!-- External jars -->
     <fileset dir=".." id="external-jars">
-      <include name="" />
+      <include name="CoreShared/external-jars/spring.jar" />
     </fileset>
     
     <!-- Merged jars -->
@@ -26,7 +26,9 @@
     </fileset>
     <!-- Other required jars -->
     <fileset dir=".." id="other-required-jars">
+      <include name="Base/${jars-dir}/Base.jar" />
       <include name="CommonShared/${jars-dir}/CommonShared.jar" />
+      <include name="CoreShared/${jars-dir}/CoreShared.jar" />
       <include name="FontShared/${jars-dir}/FontShared.jar" />
       <include name="XmlBase/${jars-dir}/XmlBase.jar" />
     </fileset>
