@@ -39,6 +39,7 @@
     <!-- External jars -->
     <fileset dir=".." id="external-jars">
       <include name="ImageXml/META-INF" />
+      <include name="CoreShared/external-jars/spring.jar" />
     </fileset>
     
     <!-- Merged jars -->
