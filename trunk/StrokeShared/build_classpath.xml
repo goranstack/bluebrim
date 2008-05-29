@@ -20,7 +20,7 @@
   <path id="classpath">
     <!-- External jars -->
     <fileset dir=".." id="external-jars">
-      <include name="" />
+      <include name="CoreShared/external-jars/spring.jar" />
     </fileset>
     
     <!-- Merged jars -->
