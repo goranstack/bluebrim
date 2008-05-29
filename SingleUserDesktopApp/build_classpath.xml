@@ -76,9 +76,10 @@
     <!-- External jars -->
     <fileset dir=".." id="external-jars">
       <include name="Crimson/crimson.jar" />
+      <include name="CoreShared/external-jars/spring.jar" />
       <include name="SingleUserDesktopApp/external-jars/xplookandfeel.jar" />
       <include name="SingleUserDesktopApp/resources" />
-      <include name="SingleUserDesktopApp/runtime/resources" />
+      <include name="SingleUserDesktopApp/runtime/fonts" />
     </fileset>
     
     <!-- Merged jars -->
