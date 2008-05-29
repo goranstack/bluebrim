@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <project name="SingleUserDesktopApp" default="dist-exe-version">
 
+	
 	<description>
 		Ant build file for the SingleUserDesktopApp project
 	</description>
@@ -8,6 +9,7 @@
 	<import file="../BuildTools/build_common.xml" />
 	<import file="../${ant.project.name}/build_classpath.xml" />
 
+	<property name="webstart-version-dir" value="${dist-dir}/web-document-root"/>
 	<!-- Targets -->
 
 	<target name="compile" depends="common.compile" description="Compiles this project">
@@ -38,10 +40,59 @@
 		</copy>
 	</target>
 
+    <target name="dist" depends="clean-all, init, svnRevision, copy-runtime-structure, copy-dist-jars-all">       
+    </target>
 
-	<target name="dist-exe-version" depends="clean-all, init, svnRevision, copy-runtime-structure, copy-dist-jars-all, copy-bundled-jvm, create-exe-wrapper" description="Creates distribution (release)">
+	
+	<target name="dist-exe-version" depends="dist, copy-bundled-jvm, create-exe-wrapper" description="Creates distribution (release)">
 		<zip destfile="${dist-dir}/layouteditor_${FILE_TSTAMP}.zip" basedir="${build-dist-dir}" />
 		<delete file="${dist-dir}/${ant.project.name}.jar" />
 	</target>
+
+	<!-- TODO: Create a jar containing the fonts -->
+	<target name="create-webstart-version" depends="dist">
+		<copy todir="${webstart-version-dir}">
+			<fileset dir="${build-dist-dir}"/>
+		</copy>
+		<signjar keystore="../BuildTools/sign-jar/.keystore" lazy="true" alias="bluebrimcert" keypass="BlueBrim" storepass="bluebrim">
+			<fileset dir="${webstart-version-dir}" includes="**/*.jar" />
+		</signjar>
+		<antcall target="create-webstart-jnlp"/>
+	</target>
+
+	<!-- The replace localhost with the actual host -->
+	<target name="create-webstart-jnlp">
+		<jnlp tofile="${webstart-version-dir}/layouteditor.jnlp" spec="1.6+" codebase="http://localhost:4714" href="layouteditor.jnlp">
+			<information>
+				<title>BlueBrim LayoutEditor</title>
+				<vendor>BlueBrim</vendor>
+				<homepage href="www.bluebrim.se"/>
+				<description>Desktop Publishing Application for newspaper page makeup</description>
+				<description kind="short">Desktop Publishing Application</description>
+				<icon href="resources/BlueBrimLogo.png"/>
+				<!--    <offline_allowed/> -->
+				<shortcut online="true">
+					<desktop/>
+					<menu submenu="BlueBrim"/>
+				</shortcut>
+			</information>
+			<security>
+				<all_permissions/>
+			</security>
+			<resources>
+				<!-- Acceptable JVMs in preferred order, best first -->
+				<j2se version="1.6+" initial_heap_size="100M" max_heap_size="250M"/>
+				<jar href="lib/SingleUserDesktopApp.jar" main="true"/>
+				<jar>
+					<fileset dir="${webstart-version-dir}" excludes="SingleUserDesktopApp.jar">
+						<include name="**/*.jar" />
+					</fileset>
+				</jar>
+			</resources>
+			<application_desc main_class="com.bluebrim.solitarylayouteditor.CoSolitaryLayoutEditor"/>
+		</jnlp>
+	</target>
+	
+	
 
 </project>
