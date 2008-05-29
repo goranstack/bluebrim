@@ -39,6 +39,7 @@
     <fileset dir=".." id="external-jars">
       <include name="TextXml/META-INF" />
       <include name="Crimson/crimson.jar" />
+      <include name="CoreShared/external-jars/spring.jar" />
     </fileset>
     
     <!-- Merged jars -->
