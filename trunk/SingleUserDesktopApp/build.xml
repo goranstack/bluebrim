@@ -49,10 +49,14 @@
 		<delete file="${dist-dir}/${ant.project.name}.jar" />
 	</target>
 
-	<!-- TODO: Create a jar containing the fonts -->
-	<target name="create-webstart-version" depends="dist">
-		<copy todir="${webstart-version-dir}">
-			<fileset dir="${build-dist-dir}"/>
+	<target name="jar-fonts" description="To have the fonts as separete files in a directory is not well suited for java web start">
+		<mkdir dir="${webstart-version-dir}/lib"/>
+		<jar destfile="${webstart-version-dir}/lib/fonts.jar" basedir="runtime/fonts"/>
+	</target>
+	
+	<target name="create-webstart-version" depends="dist, jar-fonts">
+		<copy todir="${webstart-version-dir}" file="resources/BlueBrimLogo.png">
+			<fileset dir="${build-dist-dir}" excludes="examples/**, fonts/**"/>
 		</copy>
 		<signjar keystore="../BuildTools/sign-jar/.keystore" lazy="true" alias="bluebrimcert" keypass="BlueBrim" storepass="bluebrim">
 			<fileset dir="${webstart-version-dir}" includes="**/*.jar" />
@@ -69,7 +73,7 @@
 				<homepage href="www.bluebrim.se"/>
 				<description>Desktop Publishing Application for newspaper page makeup</description>
 				<description kind="short">Desktop Publishing Application</description>
-				<icon href="resources/BlueBrimLogo.png"/>
+				<icon href="BlueBrimLogo.png"/>
 				<!--    <offline_allowed/> -->
 				<shortcut online="true">
 					<desktop/>
