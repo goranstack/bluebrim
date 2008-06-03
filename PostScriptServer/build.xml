@@ -24,7 +24,7 @@
 
 	<target name="copy-dist-jars" depends="jar">
 		<!-- TODO Copy the jar files that should be included in the distribution -->
-		<bluebrim.copy.deployjar file="${jars-dir}/${ant.project.name}.jar" todir="${build-dist-lib-dir}" />
+		<!-- bluebrim.copy.deployjar file="${jars-dir}/${ant.project.name}.jar" todir="${build-dist-lib-dir}" /-->
 		<!-- bluebrim.copy.deployjar file="external-jars/EXAMPLE.jar" todir="${build-dist-externaljars-dir}" / -->
 	</target>
 
