@@ -7,8 +7,7 @@
 <JVMSearchPath>exepath</JVMSearchPath>
 <JVMSearchPath>jview</JVMSearchPath>
 <bundledJVMPath>build\dist\java\jre1.6</bundledJVMPath>
-<classPath>runtime\resources</classPath>
-<classPath>build\dist\resources</classPath>
+<classPath>build\dist\fonts</classPath>
 <classPath>build\dist\lib\AbstractCompositeContentClient.jar</classPath>
 <classPath>build\dist\lib\AbstractContentClient.jar</classPath>
 <classPath>build\dist\lib\AbstractContentServer.jar</classPath>
@@ -74,9 +73,8 @@
 <classPath>build\dist\lib\Viewable.jar</classPath>
 <classPath>build\dist\lib\XmlBase.jar</classPath>
 <classPath>build\dist\lib\XmlShared.jar</classPath>
-<classPath>build\dist\lib\external\crimson.jar</classPath>
-<classPath>build\dist\lib\external\jdom.jar</classPath>
-<classPath>build\dist\lib\external\xalan.jar</classPath>
+<classPath>build\dist\lib\external\commons-logging-1.1.jar</classPath>
+<classPath>build\dist\lib\external\spring.jar</classPath>
 <currentDirectory>${EXECUTABLEPATH}</currentDirectory>
 <embeddedJar>false</embeddedJar>
 <executableName>build\dist\layouteditor.exe</executableName>
@@ -84,6 +82,8 @@
 <initialMemoryHeap>209715200</initialMemoryHeap>
 <javaProperties>
 <name>calvin.debug.assertions</name>
+<value>false</value>
+<name>sun.java2d.d3d</name>
 <value>false</value>
 </javaProperties>
 <mainClassName>com.bluebrim.solitarylayouteditor.CoSolitaryLayoutEditor</mainClassName>
