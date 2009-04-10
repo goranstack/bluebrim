@@ -1028,8 +1028,8 @@ protected void processMouseEvent( MouseEvent e )
 		e.consume();
 		return;
 	}
-
-	super.processMouseEvent(e);
+	if (e.getSource() instanceof JTextComponent)
+		super.processMouseEvent(e);
 	
 	if ( TRACE ) System.err.println( "processMouseEvent <<<  " + ( System.currentTimeMillis() ) + "  " + ( System.currentTimeMillis() - t ) );
 }
