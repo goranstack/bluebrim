@@ -419,7 +419,7 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 	}
 	
 	private void installFonts(CoStatusShower shower) {
-		loadFonts();
+//		loadFonts();
 		CoFontRepositoryManager manager = CoFontRepositoryManager.getSingleton();
 		installFonts(shower, manager, getJavaFontDir());
 //		System.out.println("Fonts in GraphicsEnvironment:");
