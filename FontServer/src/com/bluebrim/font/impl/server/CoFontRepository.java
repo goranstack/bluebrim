@@ -56,8 +56,6 @@ public class CoFontRepository implements CoFontRepositoryIF {
 
 	private String m_fallbackFamily;
 	
-	private File m_fontsDir;
-
 	// FONT CATALOGS
 
 	private Map m_catalogs = new HashMap(); // [ String -> CoFontCatalog ]
@@ -365,9 +363,12 @@ public class CoFontRepository implements CoFontRepositoryIF {
 	private synchronized void installFontFile(String fileName, CoFontFaceSpec spec) throws CoFontException {
 		m_shower.showStatus("Installing font " + spec + " from file " + fileName);
 
-		File file = new File(m_fontsDir, fileName);
-		if (!file.exists())
-			throw new CoFontException("Missing file: "+ file.getPath());
+		File file;
+		try {
+			file = new ClassPathResource(fileName).getFile();
+		} catch (IOException e) {
+			throw new CoFontException(e);
+		}
 		CoFontFileInfoExtractor parser = CoAbstractFontFileInfoExtractor.parseFontFile(file);
 
 		CoFontMetricsData metrics = parser.getMetricsData();
@@ -379,7 +380,20 @@ public class CoFontRepository implements CoFontRepositoryIF {
 		if (parser instanceof CoType1FileInfoExtractor) {
 			awtData.awtWorkaround_setType1(true);
 		}
-
+		
+		if (fileName.toLowerCase().endsWith(".ttf"))
+		{
+			Font font;
+			try {
+				font = Font.createFont(Font.TRUETYPE_FONT, file);
+			} catch (FontFormatException e) {
+				throw new CoFontException(e);
+			} catch (IOException e) {
+				throw new CoFontException(e);
+			}
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(font);			
+		}			
 		installFontFace(spec, metrics, postscriptData, awtData, fileContainer);
 	}
 
@@ -404,7 +418,6 @@ public class CoFontRepository implements CoFontRepositoryIF {
 		try
 		{
 			ClassPathResource classPathResource = new ClassPathResource(iniFileName);
-			m_fontsDir = classPathResource.getFile().getParentFile();
 			InputStream iniStream = classPathResource.getInputStream();
 			Reader initFileReader = new InputStreamReader(iniStream);
 			readFontInitFile(initFileReader);
