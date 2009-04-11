@@ -8,7 +8,6 @@
 		<description>Desktop Publishing Application for newspaper page makeup</description>
 		<description kind="short">Desktop Publishing Application</description>
 		<icon href="BlueBrimLogo.png"/>
-		<icon kind="splash" href="BlueBrimLogo.png"/> 
 		<shortcut online="true">
 			<desktop/>
 			<menu submenu="BlueBrim"/>
@@ -18,7 +17,7 @@
 		<all-permissions/>
 	</security>
 	<resources>
-		<j2se version="1.6+" initial-heap-size="100M" max-heap-size="250M" java-vm-args="-Dsun.java2d.d3d=false"/>
+		<j2se version="1.6+" initial-heap-size="100M" max-heap-size="250M"/>
 		<jar href="lib/SingleUserDesktopApp.jar" main="true"/>
 		<jar href="lib/AbstractCompositeContentClient.jar"/>
 		<jar href="lib/AbstractContentClient.jar"/>
@@ -84,6 +83,7 @@
 		<jar href="lib/XmlBase.jar"/>
 		<jar href="lib/XmlShared.jar"/>
 		<jar href="lib/external/commons-logging-1.1.jar"/>
+		<jar href="lib/external/crimson.jar"/>
 		<jar href="lib/external/spring.jar"/>
 		<jar href="lib/fonts.jar"/>
 	</resources>
