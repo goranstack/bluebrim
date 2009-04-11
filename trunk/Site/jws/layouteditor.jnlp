@@ -8,6 +8,7 @@
 		<description>Desktop Publishing Application for newspaper page makeup</description>
 		<description kind="short">Desktop Publishing Application</description>
 		<icon href="BlueBrimLogo.png"/>
+		<icon kind="splash" href="BlueBrimLogo.png"/> 
 		<shortcut online="true">
 			<desktop/>
 			<menu submenu="BlueBrim"/>
