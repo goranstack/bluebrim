@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jnlp PUBLIC "-//Sun Microsystems, Inc//DTD JNLP Discriptor 1.1//EN" "http://java.sun.com/dtd/JNLP-1.5.dtd">
+<jnlp spec="1.6+" codebase="http://bluebrim.googlecode.com/svn/trunk/Site/jws" href="layouteditor.jnlp">
+	<information>
+		<title>BlueBrim LayoutEditor</title>
+		<vendor>BlueBrim</vendor>
+		<homepage href="www.bluebrim.se"/>
+		<description>Desktop Publishing Application for newspaper page makeup</description>
+		<description kind="short">Desktop Publishing Application</description>
+		<icon href="BlueBrimLogo.png"/>
+		<shortcut online="true">
+			<desktop/>
+			<menu submenu="BlueBrim"/>
+		</shortcut>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<resources>
+		<j2se version="1.6+" initial-heap-size="100M" max-heap-size="250M"/>
+		<jar href="lib/SingleUserDesktopApp.jar" main="true"/>
+		<jar href="lib/AbstractCompositeContentClient.jar"/>
+		<jar href="lib/AbstractContentClient.jar"/>
+		<jar href="lib/AbstractContentServer.jar"/>
+		<jar href="lib/AbstractContentShared.jar"/>
+		<jar href="lib/Base.jar"/>
+		<jar href="lib/CommonShared.jar"/>
+		<jar href="lib/CompositeContentClient.jar"/>
+		<jar href="lib/CompositeContentServer.jar"/>
+		<jar href="lib/CompositeContentShared.jar"/>
+		<jar href="lib/ContentClient.jar"/>
+		<jar href="lib/ContentServer.jar"/>
+		<jar href="lib/ContentShared.jar"/>
+		<jar href="lib/ContentXml.jar"/>
+		<jar href="lib/CoreClient.jar"/>
+		<jar href="lib/CoreServer.jar"/>
+		<jar href="lib/CoreShared.jar"/>
+		<jar href="lib/FontClient.jar"/>
+		<jar href="lib/FontServer.jar"/>
+		<jar href="lib/FontShared.jar"/>
+		<jar href="lib/FormulaServer.jar"/>
+		<jar href="lib/FormulaShared.jar"/>
+		<jar href="lib/FormulaTextServer.jar"/>
+		<jar href="lib/FormulaTextShared.jar"/>
+		<jar href="lib/ImageClient.jar"/>
+		<jar href="lib/ImageServer.jar"/>
+		<jar href="lib/ImageShared.jar"/>
+		<jar href="lib/ImageXml.jar"/>
+		<jar href="lib/LayoutBase.jar"/>
+		<jar href="lib/LayoutClient.jar"/>
+		<jar href="lib/LayoutManagerExJobb.jar"/>
+		<jar href="lib/LayoutManagerIndia.jar"/>
+		<jar href="lib/LayoutServer.jar"/>
+		<jar href="lib/LayoutShared.jar"/>
+		<jar href="lib/LayoutXml.jar"/>
+		<jar href="lib/LengthUnitClient.jar"/>
+		<jar href="lib/LengthUnitShared.jar"/>
+		<jar href="lib/MemoryMonitor.jar"/>
+		<jar href="lib/OswegoConcurrency.jar"/>
+		<jar href="lib/PageClient.jar"/>
+		<jar href="lib/PageServer.jar"/>
+		<jar href="lib/PageShared.jar"/>
+		<jar href="lib/PageSizeClient.jar"/>
+		<jar href="lib/PageSizeServer.jar"/>
+		<jar href="lib/PageSizeShared.jar"/>
+		<jar href="lib/PaintClient.jar"/>
+		<jar href="lib/PaintServer.jar"/>
+		<jar href="lib/PaintShared.jar"/>
+		<jar href="lib/PostScript.jar"/>
+		<jar href="lib/PostScriptClient.jar"/>
+		<jar href="lib/RenderingShared.jar"/>
+		<jar href="lib/ShapeClient.jar"/>
+		<jar href="lib/ShapeShared.jar"/>
+		<jar href="lib/SingleUserDesktopApp.jar"/>
+		<jar href="lib/StrokeClient.jar"/>
+		<jar href="lib/StrokeServer.jar"/>
+		<jar href="lib/StrokeShared.jar"/>
+		<jar href="lib/TextClient.jar"/>
+		<jar href="lib/TextServer.jar"/>
+		<jar href="lib/TextShared.jar"/>
+		<jar href="lib/TextXml.jar"/>
+		<jar href="lib/Viewable.jar"/>
+		<jar href="lib/XmlBase.jar"/>
+		<jar href="lib/XmlShared.jar"/>
+		<jar href="lib/external/commons-logging-1.1.jar"/>
+		<jar href="lib/external/spring.jar"/>
+		<jar href="lib/fonts.jar"/>
+	</resources>
+	<application-desc main-class="com.bluebrim.solitarylayouteditor.CoSolitaryLayoutEditor"/>
+</jnlp>
