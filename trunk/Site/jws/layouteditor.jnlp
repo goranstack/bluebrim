@@ -17,7 +17,7 @@
 		<all-permissions/>
 	</security>
 	<resources>
-		<j2se version="1.6+" initial-heap-size="100M" max-heap-size="250M"/>
+		<j2se version="1.6+" initial-heap-size="100M" max-heap-size="250M" java-vm-args="-Dsun.java2d.d3d=false"/>
 		<jar href="lib/SingleUserDesktopApp.jar" main="true"/>
 		<jar href="lib/AbstractCompositeContentClient.jar"/>
 		<jar href="lib/AbstractContentClient.jar"/>
