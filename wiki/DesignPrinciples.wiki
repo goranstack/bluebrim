@@ -1,0 +1,5 @@
+#summary Some of the design principles explained in diagrams and text.
+
+= Design principles =
+
+Here you can find some original documentation from Dennis that did most of the work on the LayoutEditor.
