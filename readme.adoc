@@ -1,3 +1,6 @@
+// Badges
+image:http://img.shields.io/travis/goranstack/bluebrim/master.svg["Build Status (Travis CI)", link="https://travis-ci.org/goranstack/bluebrim"]
+
 = LayoutEditor
 A Java Swing application for page layout. 
 
