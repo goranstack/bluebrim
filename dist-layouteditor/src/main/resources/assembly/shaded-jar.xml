@@ -1,0 +1,10 @@
+<component>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <includes>
+                <include>${project.groupId}:${project.artifactId}</include>
+            </includes>
+         </dependencySet>
+    </dependencySets>
+</component>

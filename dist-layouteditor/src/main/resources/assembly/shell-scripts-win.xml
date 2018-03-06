@@ -1,0 +1,11 @@
+<component>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.outputDirectory}/scripts</directory>
+			<outputDirectory>.</outputDirectory>
+			<includes>
+				<include>start*.bat</include>
+			</includes>
+		</fileSet>	
+	</fileSets>
+</component>

@@ -121,6 +121,7 @@
 		<module>XmlBase</module>
 		<module>XmlClient</module>
 		<module>XmlShared</module>
+		<module>dist-layouteditor</module>
 	</modules>
 
 	<dependencyManagement>

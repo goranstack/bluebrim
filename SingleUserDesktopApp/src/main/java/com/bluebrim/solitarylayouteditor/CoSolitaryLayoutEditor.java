@@ -80,7 +80,7 @@ import com.bluebrim.xml.shared.CoXmlReadException;
  * Starts <code>CoLayoutEditor</code> as a standalone application with
  * file system persistance.
  * 
- * @author Göran Stäck 2002-09-12
+ * @author GÃ¶ran StÃ¤ck 2002-09-12
  *
  */
 public class CoSolitaryLayoutEditor implements CoNamed {
@@ -221,7 +221,7 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 			try {
 				importedXml = consumer.readModelFrom(stream);
 			} catch (CoXmlReadException e) {
-				CoGUI.error("Fel vid läsning av: " + fileStoreSupport.getFileName() + e.getMessage(), parent);
+				CoGUI.error("Fel vid lï¿½sning av: " + fileStoreSupport.getFileName() + e.getMessage(), parent);
 				stream.close();
 				deleteDirectory(file.getParentFile());
 				return;
@@ -356,7 +356,7 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 	}
 
 	public String getName() {
-		return "fristående";
+		return "fristï¿½ende";
 	}
 
 	public int getUntitledNumber() {
