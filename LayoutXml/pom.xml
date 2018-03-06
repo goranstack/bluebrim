@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>se.bluebrim.layout</groupId>
+		<artifactId>layout-editor-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>LayoutXml</artifactId>
+	<packaging>jar</packaging>
+	<name>LayoutXml</name>
+	<dependencies>
+		<dependency>
+			<groupId>se.bluebrim.layout</groupId>
+			<artifactId>ContentXml</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.bluebrim.layout</groupId>
+			<artifactId>TextXml</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.bluebrim.layout</groupId>
+			<artifactId>LayoutServer</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.bluebrim.layout</groupId>
+			<artifactId>StrokeShared</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.bluebrim.layout</groupId>
+			<artifactId>AbstractContentServer</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.bluebrim.layout</groupId>
+			<artifactId>LayoutManagerExJobb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>crimson</groupId>
+			<artifactId>crimson</artifactId>
+		</dependency>
+	</dependencies>
+</project>
