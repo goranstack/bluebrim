@@ -10,7 +10,7 @@ import com.bluebrim.paint.shared.*;
  * Ritar en färgad ruta + namnet för CoColors i popuper
  */
  
-public class CoColorListCellRenderer extends CoListCellRenderer implements ListCellRenderer
+public class CoColorListCellRenderer extends CoListCellRenderer implements ListCellRenderer<Object>
 {
 	private CoColorSampleIcon m_icon = new CoColorSampleIcon( null );
 /**

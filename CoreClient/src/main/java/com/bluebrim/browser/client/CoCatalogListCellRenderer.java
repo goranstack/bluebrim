@@ -11,7 +11,7 @@ import com.bluebrim.resource.shared.CoResourceLoader;
  * @author Lasse Svadängs 97-10-10
  * 
  */
-public class CoCatalogListCellRenderer extends CoListCellRenderer implements ListCellRenderer {
+public class CoCatalogListCellRenderer extends CoListCellRenderer implements ListCellRenderer<Object> {
 public CoCatalogListCellRenderer() {
 	super();
 }
