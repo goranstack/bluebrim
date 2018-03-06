@@ -147,7 +147,28 @@
 			<resource>
 				<directory>resources</directory>				
 			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- Make it possible to put resource files along side the Java classes -->
+			<resource>
+				<directory>src/main/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
 		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+			<testResource>
+				<directory>src/test/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
 		<pluginManagement>
 			<plugins>
 				<plugin>
