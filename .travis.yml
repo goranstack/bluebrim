@@ -6,3 +6,21 @@ jdk:
 install: true 
 
 script: mvn clean install
+
+before_deploy:
+  - mvn versions:set -DnewVersion=$TRAVIS_TAG 
+  
+deploy:
+  -
+    on:
+      tags: true
+    provider: bintray
+    skip_cleanup: true
+    file: target/bintray.json
+    user: goranstack
+    key: $BINTRAY_API_KEY
+    dry-run: true
+
+cache:
+  directories:
+  - $HOME/.m2

@@ -7,6 +7,8 @@
 		<format>zip</format>
 	</formats>
 	<componentDescriptors>
+		<componentDescriptor>src/main/resources/assembly/examples.xml</componentDescriptor>
+		<componentDescriptor>src/main/resources/assembly/fonts.xml</componentDescriptor>
 		<componentDescriptor>src/main/resources/assembly/shaded-jar.xml</componentDescriptor>
 		<componentDescriptor>src/main/resources/assembly/shell-scripts-win.xml</componentDescriptor>
 	</componentDescriptors>

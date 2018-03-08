@@ -1,0 +1,8 @@
+<component>
+	<fileSets>
+		<fileSet>
+			<directory>../SingleUserDesktopApp/runtime/examples</directory>
+			<outputDirectory>examples</outputDirectory>
+		</fileSet>	
+	</fileSets>
+</component>

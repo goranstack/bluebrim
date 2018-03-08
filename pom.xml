@@ -13,7 +13,8 @@
 		<url>scm:git:https://github.com/goranstack/bluebrim</url>
 	</scm>
 	<properties>
-		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<rootDirectory>${project.basedir}</rootDirectory>
 	</properties>
@@ -181,7 +182,36 @@
 						<target>1.8</target>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<outputDirectory>${project.build.directory}</outputDirectory>
+					<resources>
+						<resource>
+							<directory>src/main/travis-bintray</directory>
+							<filtering>true</filtering>
+						</resource>
+					</resources>
+				</configuration>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

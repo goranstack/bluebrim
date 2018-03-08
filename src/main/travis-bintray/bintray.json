@@ -1,0 +1,29 @@
+{
+    "package": {
+        "name": "bluebrim",
+        "repo": "generic",
+        "subject": "goranstack",
+        "desc": "Automatically pushed distribution",
+        "website_url": "https://github.com/goranstack/bluebrim",
+        "issue_tracker_url": "https://github.com/goranstack/bluebrim/issues",
+        "vcs_url": "https://github.com/goranstack/bluebrim.git",
+        "licenses": ["Apache-2.0"],
+        "labels": ["java", "swing", "layout"],
+        "public_download_numbers": false,
+        "public_stats": false
+        
+    },
+
+    "version": {
+        "name": "${project.version}",
+        "released": "${build.timestamp}",
+        "vcs_tag": "${project.version}"
+    },
+
+    "files":
+        [
+        {"includePattern": "dist-layouteditor/target/(.*\\.zip)", "uploadPattern": "bluebrim/$1"},
+        {"includePattern": "dist-layouteditor/target/(.*\\.tar.gz)", "uploadPattern": "bluebrim/$2"}
+        ],
+    "publish": true
+}

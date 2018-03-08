@@ -1,0 +1,8 @@
+<component>
+	<fileSets>
+		<fileSet>
+			<directory>../SingleUserDesktopApp/runtime/fonts</directory>
+			<outputDirectory>fonts</outputDirectory>
+		</fileSet>	
+	</fileSets>
+</component>
