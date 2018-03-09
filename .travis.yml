@@ -19,7 +19,7 @@ deploy:
     file: target/bintray.json
     user: goranstack
     key: $BINTRAY_API_KEY
-    dry-run: true
+    dry-run: false
 
 cache:
   directories:
