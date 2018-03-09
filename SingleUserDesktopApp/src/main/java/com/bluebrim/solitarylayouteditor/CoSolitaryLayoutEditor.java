@@ -447,6 +447,8 @@ public class CoSolitaryLayoutEditor implements CoNamed {
 	}
 
 	private File getJavaFontDir() {
+		File fontDir = new File("fonts");
+		if (fontDir.exists()) return fontDir;
 		String javaHome = System.getProperty("java.home");
 		return new File(javaHome, "lib/fonts");
 	}
