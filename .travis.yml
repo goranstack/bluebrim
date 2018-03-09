@@ -5,7 +5,7 @@ jdk:
   
 install: true 
 
-before_scripts: .travis/set-version-if-tag.sh
+before_script: .travis/set-version-if-tag.sh
 
 script: mvn clean install
 
