@@ -5,10 +5,10 @@ jdk:
   
 install: true 
 
+before_scripts: .travis/set-version-if-tag.sh
+
 script: mvn clean install
 
-before_deploy:
-  - mvn versions:set -DnewVersion=$TRAVIS_TAG 
   
 deploy:
   -
